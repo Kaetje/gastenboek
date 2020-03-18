@@ -1,13 +1,20 @@
-<h1>Guestbook</h1>
+<h1>Gastenboek</h1>
 
 <ul>
-    {%  for entry in entries %}
+    {% for entry in entries %}
         <div>
-                <h3>{{ entry.name }}</h3>
-                <small>{{ entry.createdAt|date("d/m/Y") }}</small>
-                <br>
-                {{ entry.message }}
-                <br>
+            <h3>{{ entry.name }}</h3>
+            <small>{{ entry.createdAt|date("d/m/Y") }}</small>
+            <br>
+            {{ entry.message }}
+            <br>
         </div>
     {% endfor %}
 </ul>
+
+<h2>✒ Laat een bericht achter</h2>
+    {{ form_start(entryForm) }}
+            {{ form_widget(entryForm) }}
+
+    <button type="submit">Verstuur</button>
+    {{ form_end(entryForm) }}
