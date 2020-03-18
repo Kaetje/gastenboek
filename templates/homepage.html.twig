@@ -1,1 +1,13 @@
 <h1>Guestbook</h1>
+
+<ul>
+    {%  for entry in entries %}
+        <div>
+                <h3>{{ entry.name }}</h3>
+                <small>{{ entry.createdAt|date("d/m/Y") }}</small>
+                <br>
+                {{ entry.message }}
+                <br>
+        </div>
+    {% endfor %}
+</ul>
