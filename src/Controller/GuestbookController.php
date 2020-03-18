@@ -11,7 +11,7 @@ class GuestbookController extends AbstractController
 {
     public function homepage(GuestbookEntryRepository $repository)
     {
-        $entries = $repository->findAll();
+        $entries = $repository->findBy( [], ['createdAt' => 'DESC'] );
 
         return $this->render('homepage.html.twig', [
             'entries' => $entries,
