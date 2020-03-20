@@ -10,9 +10,10 @@
         <div class="row">
             <div class="col-sm-12">
 
-            <h1 class="page-title">{{ title }}</h1>
+                {# page title #}
+                <h1 class="page-title">{{ title }}</h1>
 
-
+                {# list of guestbook entries #}
                 {% for entry in entries %}
                     <div class="entry-container my-1">
                         <div class="entry-title d-inline-block pl-3 align-middle">
@@ -25,14 +26,15 @@
                     </div>
                 {% endfor %}
 
-
+                {# Form to submit guestbook entry #}
                 <h3 class="form-title">✒ Laat een bericht achter</h3>
                 <div>
-                {{ form_start(entryForm) }}
-                {{ form_widget(entryForm) }}
-                <button type="submit" class="btn btn-primary">Verstuur</button>
-                {{ form_end(entryForm) }}
-            </div>
+                    {{ form_start(entryForm) }}
+                    {{ form_widget(entryForm) }}
+                    <button type="submit" class="btn btn-primary">Verstuur</button>
+                    {{ form_end(entryForm) }}
+                </div>
+
             </div>
         </div>
     </div>

@@ -23,6 +23,7 @@ class EntryFormType extends AbstractType
             ;
     }
 
+    // binds form to class
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
