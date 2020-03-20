@@ -35,3 +35,7 @@ html {
     padding-top: 20px;
     text-align: center;
 }
+
+.alert-success{
+    text-align: center;
+}

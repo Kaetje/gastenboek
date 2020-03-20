@@ -25,7 +25,7 @@ class GuestbookController extends AbstractController
             $em->persist($entry);
             $em->flush();
 
-            #$this->addFlash('succes', 'Bericht geplaatst!');
+            $this->addFlash('succes', 'Bericht geplaatst!');
 
             return $this->redirectToRoute('index');
         }
