@@ -1,20 +1,41 @@
-<h1>Gastenboek</h1>
+{% extends 'base.html.twig' %}
 
-<ul>
-    {% for entry in entries %}
-        <div>
-            <h3>{{ entry.name }}</h3>
-            <small>{{ entry.createdAt|date("d/m/Y") }}</small>
-            <br>
-            {{ entry.message }}
-            <br>
+{% set title = 'Gastenboek' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+            <h1 class="page-title">{{ title }}</h1>
+
+
+                {% for entry in entries %}
+                    <div class="entry-container my-1">
+                        <div class="entry-title d-inline-block pl-3 align-middle">
+                            <span><b>{{ entry.name }}</b></span>
+                            <small class="fa-pull-right">{{ entry.createdAt|date("d/m/Y") }}</small>
+                        </div>
+                        <br>
+                        <div class="entry-text d-inline-block pl-3 align-middle">{{ entry.message }}</div>
+                        <br>
+                    </div>
+                {% endfor %}
+
+
+                <h3 class="form-title">✒ Laat een bericht achter</h3>
+                <div>
+                {{ form_start(entryForm) }}
+                {{ form_widget(entryForm) }}
+                <button type="submit" class="btn btn-primary">Verstuur</button>
+                {{ form_end(entryForm) }}
+            </div>
+            </div>
         </div>
-    {% endfor %}
-</ul>
+    </div>
 
-<h2>✒ Laat een bericht achter</h2>
-    {{ form_start(entryForm) }}
-            {{ form_widget(entryForm) }}
 
-    <button type="submit">Verstuur</button>
-    {{ form_end(entryForm) }}
+{% endblock %}

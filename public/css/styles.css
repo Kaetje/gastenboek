@@ -1,0 +1,37 @@
+body {
+    position: relative;
+    background: #efefee;
+    min-height: 45rem;
+    padding-bottom: 80px;
+}
+
+html {
+    height: 100%
+}
+
+.entry-container {
+    border: 1px solid #efefee;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: #fff;
+}
+
+.entry-title {
+    min-width: 300px;
+    margin-top: 10px;
+}
+
+.entry-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.page-title{
+    padding: 20px;
+    text-align: center;
+}
+
+.form-title{
+    padding-top: 20px;
+    text-align: center;
+}
