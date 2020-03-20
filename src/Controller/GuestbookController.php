@@ -15,8 +15,6 @@ class GuestbookController extends AbstractController
 {
     public function homepage(GuestbookEntryRepository $repository, EntityManagerInterface $em, Request $request)
     {
-        $entries = $repository->findBy( [], ['createdAt' => 'DESC'] );
-
         $form = $this->createForm(EntryFormType::class);
 
         $form->handleRequest($request);
@@ -29,7 +27,10 @@ class GuestbookController extends AbstractController
 
             #$this->addFlash('succes', 'Bericht geplaatst!');
 
+            return $this->redirectToRoute('index');
         }
+
+        $entries = $repository->findBy([], ['createdAt' => 'DESC']);
 
         return $this->render('homepage.html.twig', [
             'entries' => $entries,
